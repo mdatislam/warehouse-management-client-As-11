@@ -11,8 +11,15 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './Header.css'
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
+  const [user]=useAuthState(auth)
+  const logOut=()=>{
+    signOut(auth)
+  }
   return (
     <div className="header">
       <Navbar bg="" expand="lg">
@@ -44,7 +51,12 @@ const Header = () => {
               <Nav.Link as={Link} to='/About'> About</Nav.Link>
             </Nav>
             <Form className="d-flex">
-            <Nav.Link as={Link} to='/Login'>Login</Nav.Link>
+           {
+             user?
+             <Nav.Link as={Link} to='/Login'><Button variant="outline-danger" onClick={logOut}>LogOut</Button></Nav.Link>
+             :
+             <Nav.Link as={Link} to='/Login'>Login</Nav.Link>
+           }
               <FormControl
                 type="search"
                 placeholder="Search"
