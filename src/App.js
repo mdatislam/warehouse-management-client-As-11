@@ -11,6 +11,7 @@ import Login from './Pages/SecretPage/Login/Login';
 import About from './Pages/About/About';
 import NotFound from './Pages/NotFound/NotFound';
 import Register from './Pages/SecretPage/Register/Register';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      {/* <ToastContainer/> */}
       
     </div>
   );

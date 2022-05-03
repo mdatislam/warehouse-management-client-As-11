@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from "rea
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../../firebase.init";
+import Loading from "../../CommonPage/Loading/Loading";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -12,10 +13,10 @@ const Register = () => {
   const emailRef= useRef();
   const passwordRef= useRef();
   const repasswordRef= useRef();
-  const [createUserWithEmailAndPassword,user,loading,error] = useCreateUserWithEmailAndPassword(auth);
-  const [sendEmailVerification] = useSendEmailVerification(auth);
+  const [createUserWithEmailAndPassword,user,loading,error] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
+  // const [sendEmailVerification] = useSendEmailVerification(auth,{sendEmailVerification:true});
 
-  const handleToRegister = event => {
+  const handleToRegister = async (event) => {
     event.preventDefault();
     const name= nameRef.current.value;
     const email= emailRef.current.value;
@@ -26,17 +27,22 @@ const Register = () => {
       setError1('password & Confirm Password not Match');
       return
     }
-    createUserWithEmailAndPassword(email,password);
-    sendEmailVerification()
+     await createUserWithEmailAndPassword(email,password);
     toast('Register success');
-    navigate('/Login')
-    console.log(name,email,password)
+    // navigate('/Login')
+    // console.log(name,email,password)
     event.target.reset()
+  }
+  if(loading){
+    return <Loading></Loading>
   }
 
   let errorMessage
   if(error || error1){
-    errorMessage = <p className="text-danger fs-4">Error: {error?.message} {error1}</p>
+    errorMessage = <p className="text-danger fs-4">{error?.message} {error1}</p>
+  }
+  if(user){
+    navigate('/Login')
   }
   
   return (
@@ -72,7 +78,7 @@ const Register = () => {
           Go Login !
         </Link>
       </p>
-      <ToastContainer/>
+     <ToastContainer/>
     </div>
   );
 };

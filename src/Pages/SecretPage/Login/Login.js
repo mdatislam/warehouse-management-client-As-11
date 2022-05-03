@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import auth from './../../../firebase.init';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { toast, ToastContainer} from "react-toastify";
+import SocialLogin from "../SocialLogin/SocialLogin";
+import Loading from "../../CommonPage/Loading/Loading";
 
 
 const Login = () => {
@@ -12,7 +14,10 @@ const Login = () => {
   const [password, setPassword]= useState('');
   const [signInWithEmailAndPassword,user, loading,error,] = useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, resetPasswordError] = useSendPasswordResetEmail(auth);
-  const navigate = useNavigate()
+  const [signInWithGoogle, googleUser, googleLoading, GoogleError] = useSignInWithGoogle(auth);
+  const navigate = useNavigate();
+  const location = useLocation()
+  const from= location.state?.from?.path || '/'
 
   const handleEmail=e =>{
     setEmail(e.target.value)
@@ -25,6 +30,10 @@ const Login = () => {
     event.preventDefault()
     signInWithEmailAndPassword(email,password)
   }
+  if(loading){
+    return <Loading></Loading>
+  }
+
   let errorMessage
   if(error){
     errorMessage = <p className="text-danger fs-4"> {error?.message}</p>
@@ -43,7 +52,7 @@ const Login = () => {
  
   if(user){
     toast('Login success')
-    navigate('/')
+    navigate(from,{replace:true})
    
   }
  
@@ -68,6 +77,7 @@ const Login = () => {
       }
       <p>New to Our WareHouse ? <Link  className="text-decoration-none fw-bold" to='/Register'> Please Register !</Link></p>
       <p className="mt-3"> Forgot Password ? <button className="btn btn-link text-decoration-none fw-bolder" onClick={handleResetPassword}> Reset Password !</button> </p>
+      <SocialLogin></SocialLogin>
       <ToastContainer/>
     </div>
   );
