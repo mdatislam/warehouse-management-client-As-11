@@ -12,6 +12,9 @@ import About from './Pages/About/About';
 import NotFound from './Pages/NotFound/NotFound';
 import Register from './Pages/SecretPage/Register/Register';
 import { ToastContainer } from 'react-toastify';
+import RequireAuth from './Pages/SecretPage/RequireAuth/RequireAuth';
+import Orders from './Pages/SecretPage/Orders/Orders';
+import ReviewItems from './Pages/SecretPage/ReveiwItems/ReviewItems';
 
 function App() {
   return (
@@ -23,7 +26,16 @@ function App() {
         <Route path='/Login' element={<Login></Login>}></Route>
         <Route path='/Register' element={<Register></Register>}></Route>
         <Route path='/Banner' element={<Banner></Banner>}></Route>
-        <Route path='/Services' element={<Services></Services>}></Route>
+        <Route path='/Orders' element={
+          <RequireAuth>
+            <Orders></Orders>
+          </RequireAuth>
+        }></Route>
+        <Route path='/ReviewItems' element={
+          <RequireAuth>
+            <ReviewItems></ReviewItems>
+          </RequireAuth>
+        }></Route>
         <Route path='/Blog' element={<Blog></Blog>}></Route>
         <Route path='/About' element={<About></About>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>

@@ -32,21 +32,16 @@ const Header = () => {
             <Nav
               className="me-auto my-2 my-lg-0"
               style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
+              navbarScroll>
                <Nav.Link as={Link} to='/'>Home</Nav.Link>
               <Nav.Link as={Link} to='/Services'>Services</Nav.Link>
-              <Nav.Link href="#action2">Link</Nav.Link>
-              {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Something else here
-                </NavDropdown.Item>
-              </NavDropdown> */}
+              {
+                user?<>
+                <Nav.Link as={Link} to='/Orders'className="text-primary" >Orders</Nav.Link>
+                <Nav.Link as={Link} to='/ReviewItems'className="text-primary">ReviewItems</Nav.Link>
+                </>
+              :''
+              }
               <Nav.Link as={Link} to='/Blog'> Blog</Nav.Link>
               <Nav.Link as={Link} to='/About'> About</Nav.Link>
             </Nav>

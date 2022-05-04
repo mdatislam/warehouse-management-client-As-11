@@ -27,8 +27,8 @@ const SocialLogin = () => {
             <div className='mx-2'>OR</div>
             <div style={{height:'1px'}} className='w-50 bg-primary'></div>
            </div>
-           <Button onClick={()=>{signInWithGoogle()}} variant="warning"  className="w-50 text-white" type="submit"> <img className='mx-3' src={google} width='30' alt='logo'/>
-          Login By Google
+           <Button onClick={()=>{signInWithGoogle()}} variant="warning"  className="w-50 text-white" type="submit"> Login By  <img className='mx-3' src={google} width='30' alt='logo'/>
+          
         </Button>
         {
             error?errorMessage:''
