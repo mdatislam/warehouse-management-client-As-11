@@ -1,0 +1,50 @@
+[
+    {
+            "id": 1,
+	    "type":"Telivision",
+            "name": "Smart TV",
+            "price": "100/month",
+		"Stock":"15",
+            "img": "https://i.ibb.co/KN6LJNG/TV.jpg"
+        },
+   {
+            "id": 2,
+	    "type":"Washing-Machine",
+            "name": "Washing-Machine",
+            "price": "100/month",
+		"Stock":"25",
+            "img": "https://i.ibb.co/h9q1s49/washing-Machine.jpg"
+        },
+{
+            "id": 3,
+	    "type":"Microwave-Oven",
+            "name": "Smart TV",
+            "price": "100/month",
+		"Stock":"18",
+            "img": "https://i.ibb.co/0h7w5c4/microwave-oven.jpg"
+        },
+{
+            "id": 4,
+	    "type":"Rice-Cooker",
+            "name": "Rice-Cooker",
+            "price": "100/month",
+		"Stock":"30",
+            "img": "https://i.ibb.co/5RLsqGP/rice-cooker.jpg"
+        },
+    {
+            "id": 5,
+	    "type":"Air-Conditioner",
+            "name":"Air-condition",
+            "price": "100/month",
+		"Stock":13,
+            "img": "https://i.ibb.co/rQsTrpc/Air-Conditionar.jpg"
+        },
+ {
+            "id": 6,
+	    "type":"Fridge",
+           "name":"Fridge",
+            "price": "100/month",
+		"Stock":"25",
+            "img": "https://i.ibb.co/18YPPjm/fridge.jpg"
+        }
+    ]

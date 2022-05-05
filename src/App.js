@@ -4,7 +4,6 @@ import Home from './Pages/HomePage/Home/Home';
 import { Route, Routes } from 'react-router-dom';
 import Header from './Pages/CommonPage/Header/Header';
 import Footer from './Pages/CommonPage/Footer/Footer';
-import Services from './Pages/HomePage/Services/Services';
 import Blog from './Pages/Blog/Blog';
 import Banner from './Pages/HomePage/Banner/Banner';
 import Login from './Pages/SecretPage/Login/Login';
@@ -15,6 +14,8 @@ import { ToastContainer } from 'react-toastify';
 import RequireAuth from './Pages/SecretPage/RequireAuth/RequireAuth';
 import Orders from './Pages/SecretPage/Orders/Orders';
 import ReviewItems from './Pages/SecretPage/ReveiwItems/ReviewItems';
+import Products from './Pages/HomePage/Home/products/Products';
+import SingleProduct from './Pages/HomePage/SingleProduct/SingleProduct';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/Services' element={<Services></Services>}></Route>
+        <Route path='/products/:type' element={<SingleProduct></SingleProduct>}></Route>
+        
         <Route path='/Login' element={<Login></Login>}></Route>
         <Route path='/Register' element={<Register></Register>}></Route>
         <Route path='/Banner' element={<Banner></Banner>}></Route>

@@ -23,11 +23,11 @@ const SocialLogin = () => {
     return (
         <div>
            <div className='d-flex justify-content-center align-items-center'>
-           <div style={{height:'1px'}} className='w-50 bg-primary'></div>
+           <div style={{height:'1px'}} className='w-50 bg-dark'></div>
             <div className='mx-2'>OR</div>
-            <div style={{height:'1px'}} className='w-50 bg-primary'></div>
+            <div style={{height:'1px'}} className='w-50 bg-dark'></div>
            </div>
-           <Button onClick={()=>{signInWithGoogle()}} variant="warning"  className="w-50 text-white" type="submit"> Login By  <img className='mx-3' src={google} width='30' alt='logo'/>
+           <Button onClick={()=>{signInWithGoogle()}} variant="outline-success"  className="w-50" type="submit"> <img className='mx-3' src={google} width='30' alt='logo'/>Login with  Google
           
         </Button>
         {

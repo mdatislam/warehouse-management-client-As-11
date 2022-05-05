@@ -17,7 +17,7 @@ const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, GoogleError] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
   const location = useLocation()
-  const from= location.state?.from?.path || '/'
+  const from = location.state?.from?.path || '/'
 
   const handleEmail=e =>{
     setEmail(e.target.value)
