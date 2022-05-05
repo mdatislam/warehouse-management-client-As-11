@@ -23,11 +23,14 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/products/:type' element={<SingleProduct></SingleProduct>}></Route>
-        
         <Route path='/Login' element={<Login></Login>}></Route>
         <Route path='/Register' element={<Register></Register>}></Route>
         <Route path='/Banner' element={<Banner></Banner>}></Route>
+        <Route path='/products/:id' element={
+          <RequireAuth>
+            <SingleProduct></SingleProduct>
+          </RequireAuth>
+        }></Route>
         <Route path='/Orders' element={
           <RequireAuth>
             <Orders></Orders>
