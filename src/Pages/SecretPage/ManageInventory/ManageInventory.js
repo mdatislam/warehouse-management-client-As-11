@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useDataLoad from '../../../Hooks/useDataLoad';
 
 const ManageInventory = () => {
     const [products,setProducts]= useDataLoad()
-    const [isload,setIsload]=useState(false)
     useEffect(()=>{
         fetch('https://secret-sands-49470.herokuapp.com/products')
         .then(res=>res.json())
@@ -29,8 +29,12 @@ const ManageInventory = () => {
     }
    
     return (
-        <div className="container mb-3">
+        <div className="mx-2 mb-3 mt-3">
+            <div className='d-flex justify-content-between mb-2'>
+            <Link to="/AddItem"><Button variant='outline-success'> Add New Item</Button></Link>
             <h4 className="text-warning">Total Inventory Items: {products.length}</h4>
+        <Link to="/AddItem"><Button variant='outline-success'> Add New Item</Button></Link>
+            </div>
          <div className="products-container">
          {
              products.map(product=> 

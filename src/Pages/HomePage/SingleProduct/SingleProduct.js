@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
@@ -9,8 +9,8 @@ const SingleProduct = () => {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [isReload, setIsreload] = useState(false);
-  
-  const { img, name, price, Stock,Description } = products;
+
+  const { img, name, price, Stock, Description } = products;
   const url = `https://secret-sands-49470.herokuapp.com/products/${id}`;
   useEffect(() => {
     // const url = `https://secret-sands-49470.herokuapp.com/products/${id}`;
@@ -35,7 +35,7 @@ const SingleProduct = () => {
       .then((res) => res.json())
       .then((result) => setProducts(result));
     setIsreload(!isReload);
-   
+
     // console.log('after update',products);
   };
 
@@ -52,7 +52,7 @@ const SingleProduct = () => {
       .then((res) => res.json())
       .then((result) => setProducts(result));
     setIsreload(!isReload);
-   
+
     // console.log('after update',products);
   };
   return (
@@ -77,8 +77,13 @@ const SingleProduct = () => {
           <h4 className="product-info mt-2">Product Info:</h4>
           <h4> Name: {name}</h4>
           <h5> Price:&nbsp;{price}</h5>
-          <p className="text-primary fs-3"> Quantity:<span className="text-warning ms-2">{Stock}</span></p>
-          <p className="text-info " >Description: <small className="text-white">{Description}</small></p>
+          <p className="text-primary fs-3">
+            {" "}
+            Quantity:<span className="text-warning ms-2">{Stock}</span>
+          </p>
+          <p className="text-info ">
+            Description: <small className="text-white">{Description}</small>
+          </p>
         </div>
         <div className="ms-3">
           <h4 className="text-primary"> To Restock The Item </h4>
@@ -89,8 +94,13 @@ const SingleProduct = () => {
               type="number"
               {...register("Stock", { min: 1 })}
             />
-            <input className="add-btn" type="submit" value="Add Item" />
+            <input className="add-btn" type="submit" value="Add New Item" />
           </form>
+          <Link to="/ManageInventory">
+            <Button className="mt-5 btn btn-success w-75">
+              Go Manage Inventory
+            </Button>
+          </Link>
         </div>
       </div>
       {/* To Restock Item */}

@@ -17,9 +17,8 @@ const Home = () => {
           <Products key={product._id} product={product}></Products>
         ))}
       </div>
-      <Link to="/ManageInventory">
-        {" "}
-        <Button> Manage Inventory</Button>
+      <Link  to="/ManageInventory">
+        <Button className="mt-2 mb-2 btn btn-success w-100">Go Manage Inventory</Button>
       </Link>
     </div>
   );

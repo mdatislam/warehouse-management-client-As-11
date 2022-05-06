@@ -27,7 +27,7 @@ const Header = () => {
         <Container fluid >
           <Navbar.Brand as={Link} to='/'>
             <img src={logo} width='60px' alt="logo" />
-           <strong className="text-danger">DEPOSITO</strong>
+           <strong className="text-danger"> DEPOSITO </strong>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -39,8 +39,8 @@ const Header = () => {
               <Nav.Link as={Link} to='/Services'>Services</Nav.Link>
               {
                 user?<>
-                <Nav.Link as={Link} to='/ManageInventory'className="text-primary" >ManageInventory</Nav.Link>
-                <Nav.Link as={Link} to='/ReviewItems'className="text-primary">ReviewItems</Nav.Link>
+                <Nav.Link as={Link} to='/ManageInventory'className="text-warning" >ManageInventory</Nav.Link>
+                <Nav.Link as={Link} to='/AddItem'className="text-warning">AddItem</Nav.Link>
                 </>
               :''
               }
