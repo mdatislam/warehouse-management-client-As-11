@@ -1,4 +1,9 @@
 .header{
-    background-color: rgb(240, 152, 230);
+    background-color: #28539e;
    
+   
+}
+.navbar-light .navbar-nav .nav-link  {
+    color: #ffffff;
+    font-size: larger;
 }

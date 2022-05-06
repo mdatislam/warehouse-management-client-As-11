@@ -1,4 +1,5 @@
 import React from "react";
+import './Header.css'
 import logo from '../../../Images/warehouse-logo2.png'
 import {
   Button,
@@ -25,7 +26,8 @@ const Header = () => {
       <Navbar bg="" expand="lg">
         <Container fluid >
           <Navbar.Brand as={Link} to='/'>
-            <img src={logo} alt="logo" />
+            <img src={logo} width='60px' alt="logo" />
+           <strong className="text-danger">DEPOSITO</strong>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -33,7 +35,7 @@ const Header = () => {
               className="me-auto my-2 my-lg-0"
               style={{ maxHeight: "100px" }}
               navbarScroll>
-               <Nav.Link as={Link} to='/'>Home</Nav.Link>
+               <Nav.Link as={Link} to='/Home'>Home</Nav.Link>
               <Nav.Link as={Link} to='/Services'>Services</Nav.Link>
               {
                 user?<>
@@ -52,13 +54,13 @@ const Header = () => {
              :
              <Nav.Link as={Link} to='/Login'>Login</Nav.Link>
            }
-              <FormControl
+              {/* <FormControl
                 type="search"
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="outline-success">Search</Button> */}
             </Form>
           </Navbar.Collapse>
         </Container>

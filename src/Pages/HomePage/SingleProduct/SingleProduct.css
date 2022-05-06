@@ -1,0 +1,23 @@
+.single-container{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-gap: 10px
+}
+.product-info{
+    color:rgba(247, 198, 0, 0.958);
+    
+}
+.add-btn{
+    background-color: rgb(10, 171, 252);
+    color:rgb(236, 236, 236);
+    font-weight: 700;
+    border-radius: 5px;
+}
+@media only screen and (max-width:550px) {
+    .single-container{
+        grid-template-columns: 1fr;
+    }
+    .single-container img{
+        width: 400px;
+    }
+}

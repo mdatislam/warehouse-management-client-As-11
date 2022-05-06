@@ -16,6 +16,9 @@ const SocialLogin = () => {
     if(error){
         errorMessage= <p className='text-danger fs-4'> {error.message}</p>
     }
+    if(loading){
+        return <Loading></Loading>
+    }
     if(user){
         navigate('/')
     }

@@ -18,7 +18,7 @@ const Products = ({ product }) => {
           <p> Category:{type}</p>
           <p> Total Stock:{Stock}</p>
         </div>
-        <Button
+        <Button className=" w-50 mb-2"
           onClick={() => {
             explorersProduct(_id);
           }}

@@ -1,0 +1,28 @@
+
+.footer-container{
+    background-color: #0c1a32;
+    /* height: 200px; */
+    color:#ffffff
+}
+h6{
+    color:#ffffff
+}
+.info-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.info-container p,h5 {
+    
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    @media only screen and (max-width:550px){
+        .info-container{
+            grid-template-columns: 1fr;
+
+        }
+        
+    }
