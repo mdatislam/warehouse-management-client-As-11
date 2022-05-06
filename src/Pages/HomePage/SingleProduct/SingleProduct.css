@@ -1,7 +1,7 @@
 .single-container{
     display: grid;
     grid-template-columns:repeat(3,1fr);
-    grid-gap: 10px
+    grid-gap: 7px
 }
 .product-info{
     color:rgba(247, 198, 0, 0.958);

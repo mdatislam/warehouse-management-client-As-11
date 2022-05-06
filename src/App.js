@@ -12,10 +12,10 @@ import NotFound from './Pages/NotFound/NotFound';
 import Register from './Pages/SecretPage/Register/Register';
 import { ToastContainer } from 'react-toastify';
 import RequireAuth from './Pages/SecretPage/RequireAuth/RequireAuth';
-import Orders from './Pages/SecretPage/Orders/Orders';
 import ReviewItems from './Pages/SecretPage/ReveiwItems/ReviewItems';
 import Products from './Pages/HomePage/Home/products/Products';
 import SingleProduct from './Pages/HomePage/SingleProduct/SingleProduct';
+import ManageInventory from './Pages/SecretPage/ManageInventory/ManageInventory';
 
 function App() {
   return (
@@ -32,9 +32,9 @@ function App() {
             <SingleProduct></SingleProduct>
           </RequireAuth>
         }></Route>
-        <Route path='/Orders' element={
+        <Route path='/ManageInventory' element={
           <RequireAuth>
-            <Orders></Orders>
+            <ManageInventory></ManageInventory>
           </RequireAuth>
         }></Route>
         <Route path='/ReviewItems' element={

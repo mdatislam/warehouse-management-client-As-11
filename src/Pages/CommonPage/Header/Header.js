@@ -39,7 +39,7 @@ const Header = () => {
               <Nav.Link as={Link} to='/Services'>Services</Nav.Link>
               {
                 user?<>
-                <Nav.Link as={Link} to='/Orders'className="text-primary" >Orders</Nav.Link>
+                <Nav.Link as={Link} to='/ManageInventory'className="text-primary" >ManageInventory</Nav.Link>
                 <Nav.Link as={Link} to='/ReviewItems'className="text-primary">ReviewItems</Nav.Link>
                 </>
               :''

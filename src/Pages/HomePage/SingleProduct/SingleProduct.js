@@ -3,64 +3,61 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import './SingleProduct.css'
-
+import "./SingleProduct.css";
 
 const SingleProduct = () => {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
-  const [isReload,setIsreload]= useState(false)
-  const [iSReload,setISreload]= useState(false)
-  const { img, name, price, Stock } = products;
-  const url = `http://localhost:5000/products/${id}`;
+  const [isReload, setIsreload] = useState(false);
+  
+  const { img, name, price, Stock,Description } = products;
+  const url = `https://secret-sands-49470.herokuapp.com/products/${id}`;
   useEffect(() => {
-    // const url = `http://localhost:5000/products/${id}`;
+    // const url = `https://secret-sands-49470.herokuapp.com/products/${id}`;
     // console.log(url);
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProducts(data));
     // console.log(products);
-  }, [isReload,iSReload]);
+  }, [products]);
 
   const StockCount = (Stock) => {
     const newStock = Stock - 1;
     // console.log(newStock);
-    
-      fetch(url, {
-        method: "PUT",
-        headers: {
-          "content-Type": "application/json",
-        },
-        body: JSON.stringify({ newStock }),
-      })
-        .then((res) => res.json())
-        .then((result) => setProducts(result));
-        setIsreload(!isReload)
-        setISreload(!iSReload)
-      // console.log('after update',products);
-  }
-    
 
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) =>{
-    const newStock= parseInt(data.Stock)+parseInt(products.Stock)
     fetch(url, {
       method: "PUT",
       headers: {
         "content-Type": "application/json",
       },
-      body: JSON.stringify({newStock}),
+      body: JSON.stringify({ newStock }),
     })
       .then((res) => res.json())
       .then((result) => setProducts(result));
-      setIsreload(!isReload)
-      setISreload(!iSReload)
+    setIsreload(!isReload);
+   
     // console.log('after update',products);
+  };
 
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => {
+    const newStock = parseInt(data.Stock) + parseInt(products.Stock);
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-Type": "application/json",
+      },
+      body: JSON.stringify({ newStock }),
+    })
+      .then((res) => res.json())
+      .then((result) => setProducts(result));
+    setIsreload(!isReload);
+   
+    // console.log('after update',products);
   };
   return (
     <div className="mb-3">
-      <div className=" container mt-3 single-container">
+      <div className="mx-2 mt-3 single-container">
         <div>
           <p>
             {" "}
@@ -70,22 +67,25 @@ const SingleProduct = () => {
             onClick={() => {
               StockCount(Stock);
             }}
-            variant="outline-success" className="w-75"
+            variant="outline-success"
+            className="w-75"
           >
             Deliver
           </Button>
         </div>
-        <div className="ms-3 border">
-          <h4 className="product-info">Product Info:</h4>
+        <div className="ms-3 border text-start text-white bg-dark px-2">
+          <h4 className="product-info mt-2">Product Info:</h4>
           <h4> Name: {name}</h4>
-          <h5> Price:{price}</h5>
-          <p className="text-primary fs-3"> Quantity:{Stock}</p>
+          <h5> Price:&nbsp;{price}</h5>
+          <p className="text-primary fs-3"> Quantity:<span className="text-warning ms-2">{Stock}</span></p>
+          <p className="text-info " >Description: <small className="text-white">{Description}</small></p>
         </div>
         <div className="ms-3">
           <h4 className="text-primary"> To Restock The Item </h4>
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
-              placeholder="Restock Quantity" required
+              placeholder="Restock Quantity"
+              required
               type="number"
               {...register("Stock", { min: 1 })}
             />

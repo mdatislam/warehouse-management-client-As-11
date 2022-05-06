@@ -1,50 +1,102 @@
 [
-    {
-            "id": 1,
-	    "type":"Telivision",
-            "name": "Smart TV",
-            "price": "100/month",
-		"Stock":"15",
-            "img": "https://i.ibb.co/KN6LJNG/TV.jpg"
-        },
+      {
+              "id": 1,
+            "type":"Telivision",
+              "name": "Sony-SW-4321",
+        "Brand":"Sony-Bravia",
+              "price": "55000",
+              "Stock":"15",
+  "Description":"sit amet consectetur adipisicing elit. Atque eius cum nulla obcaecati, maiores, quis vel blanditiis dolores, sed porro est. Harum dolorum vitae ratione quos eum impedit dolor inventore!",
+              "img": "https://i.ibb.co/KN6LJNG/TV.jpg"
+          },
+     {
+              "id": 2,
+            "type":"Washing-Machine",
+              "name": "WM-S34536",
+              "Brand":"Butterfly",
+              "price": "52000",
+              "Stock":"25",
+  "Description":"sit amet consectetur adipisicing elit. Atque eius cum nulla obcaecati, maiores, quis vel blanditiis dolores, sed porro est. Harum dolorum vitae ratione quos eum impedit dolor inventore!",
+              "img": "https://i.ibb.co/h9q1s49/washing-Machine.jpg"
+          },
+  {
+              "id": 3,
+            "type":"Microwave-Oven",
+              "name": "BT-Oven-S324",
+              "Brand":"Butterfly",
+              "price": "18000",
+              "Stock":"18",
+  "Description":"sit amet consectetur adipisicing elit. Atque eius cum nulla obcaecati, maiores, quis vel blanditiis dolores, sed porro est. Harum dolorum vitae ratione quos eum impedit dolor inventore!",
+              "img": "https://i.ibb.co/0h7w5c4/microwave-oven.jpg"
+          },
+  {
+              "id": 4,
+            "type":"Rice-Cooker",
+              "name": "RC-Singer",
+              "Brand":"Singer",
+              "price": "2500",
+              "Stock":"30",
+  "Description":"sit amet consectetur adipisicing elit. Atque eius cum nulla obcaecati, maiores, quis vel blanditiis dolores, sed porro est. Harum dolorum vitae ratione quos eum impedit dolor inventore!",
+              "img": "https://i.ibb.co/5RLsqGP/rice-cooker.jpg"
+          },
+      {
+              "id": 5,
+            "type":"Air-Conditioner",
+              "name":"AC-General",
+              "Brand":"General",
+              "price": "75000",
+              "Stock":12,
+  "Description":"sit amet consectetur adipisicing elit. Atque eius cum nulla obcaecati, maiores, quis vel blanditiis dolores, sed porro est. Harum dolorum vitae ratione quos eum impedit dolor inventore!",
+              "img": "https://i.ibb.co/rQsTrpc/Air-Conditionar.jpg"
+          },
    {
-            "id": 2,
-	    "type":"Washing-Machine",
-            "name": "Washing-Machine",
-            "price": "100/month",
-		"Stock":"25",
-            "img": "https://i.ibb.co/h9q1s49/washing-Machine.jpg"
-        },
-{
-            "id": 3,
-	    "type":"Microwave-Oven",
-            "name": "Smart TV",
-            "price": "100/month",
-		"Stock":"18",
-            "img": "https://i.ibb.co/0h7w5c4/microwave-oven.jpg"
-        },
-{
-            "id": 4,
-	    "type":"Rice-Cooker",
-            "name": "Rice-Cooker",
-            "price": "100/month",
-		"Stock":"30",
-            "img": "https://i.ibb.co/5RLsqGP/rice-cooker.jpg"
-        },
-    {
-            "id": 5,
-	    "type":"Air-Conditioner",
-            "name":"Air-condition",
-            "price": "100/month",
-		"Stock":13,
-            "img": "https://i.ibb.co/rQsTrpc/Air-Conditionar.jpg"
-        },
- {
-            "id": 6,
-	    "type":"Fridge",
-           "name":"Fridge",
-            "price": "100/month",
-		"Stock":"25",
-            "img": "https://i.ibb.co/18YPPjm/fridge.jpg"
-        }
-    ]
+              "id": 6,
+            "type":"Fridge",
+             "name":"LG-A34562",
+              "Brand":"LG",
+              "price": "49000",
+              "Stock":"12",
+  "Description":"sit amet consectetur adipisicing elit. Atque eius cum nulla obcaecati, maiores, quis vel blanditiis dolores, sed porro est. Harum dolorum vitae ratione quos eum impedit dolor inventore!",
+              "img": "https://i.ibb.co/18YPPjm/fridge.jpg"
+          },
+   {
+              "id": 7,
+            "type":"Laptop",
+             "name":"HP-640",
+              "Brand":"HP",
+              "price": "72000",
+              "Stock":"7",
+  "Description":"sit amet consectetur adipisicing elit. Atque eius cum nulla obcaecati, maiores, quis vel blanditiis dolores, sed porro est. Harum dolorum vitae ratione quos eum impedit dolor inventore!",
+              "img": "https://i.ibb.co/58qbnX4/Laptop.jpg"
+          },
+   {
+              "id": 10,
+            "type":"Mobile",
+             "name":"Samung-A32",
+              "Brand":"Samsung",
+              "price": "42000",
+              "Stock":"5",
+  "Description":"sit amet consectetur adipisicing elit. Atque eius cum nulla obcaecati, maiores, quis vel blanditiis dolores, sed porro est. Harum dolorum vitae ratione quos eum impedit dolor inventore!",
+              "img": "https://i.ibb.co/MN2xZQG/mobile.jpg"
+          },
+   {
+              "id": 8,
+            "type":"Desktop",
+             "name":"Desktop-Lenovo",
+              "Brand":"Lenovo",
+              "price": "33000",
+              "Stock":"8",
+  "Description":"sit amet consectetur adipisicing elit. Atque eius cum nulla obcaecati, maiores, quis vel blanditiis dolores, sed porro est. Harum dolorum vitae ratione quos eum impedit dolor inventore!",
+              "img": "https://i.ibb.co/HqRtZjD/Desktop.jpg"
+          },
+   {
+              "id": 9,
+            "type":"Smart-Watch",
+             "name":"SM-Huawe-3423",
+              "price": "6000",
+              "Brand":"Huawei",
+              "Stock":"13",
+  "Description":"sit amet consectetur adipisicing elit. Atque eius cum nulla obcaecati, maiores, quis vel blanditiis dolores, sed porro est. Harum dolorum vitae ratione quos eum impedit dolor inventore!",
+              "img": "https://i.ibb.co/Hg4JnHW/smart-watch.jpg"
+          }
+      ]

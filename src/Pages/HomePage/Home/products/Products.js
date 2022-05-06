@@ -5,7 +5,7 @@ import "./products.css";
 
 const Products = ({ product }) => {
   const navigate = useNavigate();
-  const { _id, price, type, Stock, img } = product;
+  const { _id, price, type, Stock, img,Brand } = product;
 
   const explorersProduct = (id) => {
     navigate(`/products/${id}`)
@@ -16,7 +16,8 @@ const Products = ({ product }) => {
         <img src={img} alt="logo" />
         <div className="d-flex justify-content-between p-2">
           <p> Category:{type}</p>
-          <p> Total Stock:{Stock}</p>
+          <p className="text-dark fs-5"> Stock:<span className="text-primary fs-5">{Stock}</span></p>
+         
         </div>
         <Button className=" w-50 mb-2"
           onClick={() => {

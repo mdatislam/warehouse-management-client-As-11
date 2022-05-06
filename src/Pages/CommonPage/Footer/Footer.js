@@ -5,7 +5,7 @@ const Footer = () => {
     const date = new Date()
     const year = date.getFullYear()
     return (
-        <div className='footer-container fixed="bottom" sticky="bottom" p-4 '>
+        <div className='footer-container fixed="bottom" sticky="bottom" p-4 text-start'>
             <div className='info-container'>
                 <div>
                     <h5 className=''>About</h5>
@@ -28,7 +28,7 @@ const Footer = () => {
                 </div>
             </div>
             <hr className='w-100 bg-light'/>
-            <h6>&copy;{year} Deposito All Rights Reserved</h6>
+            <h6 className='text-center'>&copy;{year} Deposito All Rights Reserved</h6>
         </div>
     );
 };

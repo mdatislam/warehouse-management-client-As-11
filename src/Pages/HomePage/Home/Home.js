@@ -4,23 +4,23 @@ import Products from "./products/Products";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import useDataLoad from "../../../Hooks/useDataLoad";
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+  const [products, setProducts] = useDataLoad();
+
   return (
     <div className="container">
-      <h4 className="text-warning">Total Inventory Items: {products.length}</h4>
+      <h4 className="text-warning">Sample Inventory Items !</h4>
       <div className="products-container">
         {products.map((product) => (
           <Products key={product._id} product={product}></Products>
         ))}
       </div>
-      <Link to='/ManageInventory'> <Button> Manage Inventory</Button></Link>
+      <Link to="/ManageInventory">
+        {" "}
+        <Button> Manage Inventory</Button>
+      </Link>
     </div>
   );
 };
