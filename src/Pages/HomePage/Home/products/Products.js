@@ -13,7 +13,7 @@ const Products = ({ product }) => {
   return (
     <div>
       <div className="product border">
-        <img src={img} alt="logo" />
+        <img src={img} alt="logo" className="fluid w-100" />
         <div className="d-flex justify-content-between p-2">
           <p> Category:{type}</p>
           <p className="text-dark fs-5"> Stock:<span className="text-primary fs-5">{Stock}</span></p>

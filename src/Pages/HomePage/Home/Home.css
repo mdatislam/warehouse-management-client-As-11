@@ -1,7 +1,11 @@
+.home-container{
+    width: 98%;
+    padding: 50px;
+}
 .products-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 15px
+    grid-gap: 18px
 }
 
 @media screen and (max-width:550px){

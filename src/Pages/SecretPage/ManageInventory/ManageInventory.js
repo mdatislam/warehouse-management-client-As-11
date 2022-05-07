@@ -39,7 +39,7 @@ const ManageInventory = () => {
          {
              products.map(product=> 
                 <div className="product border">
-                <img src={product.img} alt="logo" />
+                <img src={product.img} alt="logo" className='fluid w-100' />
                 <div className="d-flex justify-content-between p-2 text-start">
                   <div>
                     <p> Item Name:{product.name}</p>

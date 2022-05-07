@@ -17,6 +17,7 @@ import SingleProduct from './Pages/HomePage/SingleProduct/SingleProduct';
 import ManageInventory from './Pages/SecretPage/ManageInventory/ManageInventory';
 import AddItem from './Pages/SecretPage/AddItem/AddItem';
 
+
 function App() {
   return (
     <div className="App">
