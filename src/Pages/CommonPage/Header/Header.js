@@ -22,8 +22,8 @@ const Header = () => {
     signOut(auth)
   }
   return (
-    <div className="header">
-      <Navbar bg="" expand="lg">
+    <div className="header ">
+      <Navbar bg="" expand="lg" >
         <Container fluid >
           <Navbar.Brand as={Link} to='/'>
             <img src={logo} width='60px' alt="logo" />
@@ -36,7 +36,7 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll>
                <Nav.Link as={Link} to='/Home'>Home</Nav.Link>
-              <Nav.Link as={Link} to='/Services'>Services</Nav.Link>
+              <Nav.Link id='Services' href='Home#Services'>Services</Nav.Link>
               {
                 user?<>
                 <Nav.Link as={Link} to='/ManageInventory'className="text-warning" >ManageInventory</Nav.Link>

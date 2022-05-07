@@ -25,7 +25,7 @@ const Products = ({ product }) => {
           }}
           variant="outline-success"
         >
-          Explore
+          Stock Update
         </Button>
       </div>
     </div>

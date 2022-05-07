@@ -16,6 +16,7 @@ import Products from './Pages/HomePage/Home/products/Products';
 import SingleProduct from './Pages/HomePage/SingleProduct/SingleProduct';
 import ManageInventory from './Pages/SecretPage/ManageInventory/ManageInventory';
 import AddItem from './Pages/SecretPage/AddItem/AddItem';
+import Services from './Pages/HomePage/Services/Services';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/Home' element={<Home></Home>}></Route>
+        <Route path='/#Services' element={<Services></Services>}></Route>
         <Route path='/Login' element={<Login></Login>}></Route>
         <Route path='/Register' element={<Register></Register>}></Route>
         <Route path='/Banner' element={<Banner></Banner>}></Route>

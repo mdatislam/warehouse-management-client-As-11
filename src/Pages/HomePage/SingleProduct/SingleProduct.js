@@ -86,10 +86,10 @@ const SingleProduct = () => {
           </p>
         </div>
         <div className="ms-3">
-          <h4 className="text-primary"> To Restock The Item </h4>
+          <h4 className="text-primary"> To Stock New Item </h4>
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
-              placeholder="Restock Quantity"
+              placeholder="Put New Stock Quantity"
               required
               type="number"
               {...register("Stock", { min: 1 })}
