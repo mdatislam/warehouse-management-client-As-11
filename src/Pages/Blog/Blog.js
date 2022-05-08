@@ -1,5 +1,7 @@
+
 import React from "react";
 import { Table } from "react-bootstrap";
+
 
 const Blog = () => {
   return (
@@ -86,8 +88,52 @@ const Blog = () => {
          </div>
         {/* 3rd Question */}
         <div>
-        <h5 className="text-warning text-start">3.Differences between sql and nosql databases. ?</h5> 
+        <h5 className="text-warning text-start">3.Differences between sql and nosql databases. ?</h5>
+        <Table striped bordered>
+        <thead>
+          <tr>
+            <th>SN</th>
+            <th>SQL</th>
+            <th>NoSQL</th>
+          </tr>
+        </thead>
+        <tbody className="text-start">
+          <tr>
+            <td>1</td>
+            <td>
+            RELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS).{" "}
+            </td>
+            <td>Non-relational or distributed database system..</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>These databases have fixed or static or predefined schema.</td>
+            <td>
+            They have dynamic schema.
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>They have dynamic schema.</td>
+            <td>These databases are best suited for hierarchical data storage..</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>These databases are best suited for complex queries.</td>
+            <td>These databases are not so good for complex queries.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>
+            Vertically Scalable.
+            </td>
+            <td>Horizontally scalable.</td>
+          </tr>
+        </tbody>
+      </Table> 
+      
         </div>
+        
     </div>
   );
 };
