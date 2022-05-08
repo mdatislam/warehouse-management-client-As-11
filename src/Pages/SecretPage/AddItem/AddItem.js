@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import './AddItem.css'
 
 const AddItem = () => {
   const { register, handleSubmit } = useForm();
@@ -22,11 +23,13 @@ const AddItem = () => {
 
   return (
     <div>
-      <h4 className="text-warning">To update New Item !</h4>
-      <small>Fill up bellow field</small>
+     <div className="login-title">
+      <h4 className="mb-2 mt-3">To Update New Item !</h4>
+      <small>Fill up bellow fields</small>
+      </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mx-auto mt-3 w-50 d-flex flex-column "
+        className="mx-auto mt-3 w-50 d-flex flex-column add-input-form "
       >
         <input
           className="mb-2"

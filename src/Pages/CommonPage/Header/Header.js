@@ -23,7 +23,7 @@ const Header = () => {
   }
   return (
     <div className="header ">
-      <Navbar bg="" expand="lg" >
+      <Navbar bg="" expand="lg"  sticky="top" >
         <Container fluid >
           <Navbar.Brand as={Link} to='/'>
             <img src={logo} width='60px' alt="logo" />
@@ -36,7 +36,7 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll>
                <Nav.Link as={Link} to='/Home'>Home</Nav.Link>
-              <Nav.Link id='Services' href='Home#Services'>Services</Nav.Link>
+              <Nav.Link id='Services' as={Link} to='/Home#Services'>Services</Nav.Link>
               {
                 user?<>
                 <Nav.Link as={Link} to='/ManageInventory'className="text-warning" >ManageInventory</Nav.Link>
@@ -50,9 +50,9 @@ const Header = () => {
             <Form className="d-flex">
            {
              user?
-             <Nav.Link as={Link} to='/Login'><Button variant="outline-danger" onClick={logOut}>LogOut</Button></Nav.Link>
+             <Nav.Link as={Link} to='/Login'><Button variant="outline-danger" className="text-white fs-5" onClick={logOut}>LogOut</Button></Nav.Link>
              :
-             <Nav.Link as={Link} to='/Login'>Login</Nav.Link>
+             <Nav.Link as={Link} to='/Login'><Button variant="outline-success" className="text-white fs-5">Log In</Button></Nav.Link>
            }
               {/* <FormControl
                 type="search"

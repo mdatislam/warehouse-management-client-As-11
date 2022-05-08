@@ -1,0 +1,12 @@
+.add-input-form{
+    padding: 20px;
+    /* background-color: #172b4c; */
+}
+
+@media only screen and (max-width:600px) {
+    .add-input-form{
+        width: 100%;
+        padding: 2px;
+    }
+    
+}

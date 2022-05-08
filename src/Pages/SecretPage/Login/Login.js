@@ -24,8 +24,10 @@ const Login = () => {
     useSignInWithGoogle(auth);
   const navigate = useNavigate();
   const location = useLocation();
-  const from =location.state?.from?.pathname|| '/';
-  console.log('path name',from)
+  let from = location.state?.from?.pathname || "/";
+  // console.log('path name',from)
+
+  
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -38,6 +40,7 @@ const Login = () => {
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
   };
+
   if (loading) {
     return <Loading></Loading>;
   }
@@ -56,12 +59,15 @@ const Login = () => {
     }
   };
    if (user) {
-    navigate('from',{replace:true});
+    navigate(from, { replace: true });
 }
 
   return (
-    <div className="form-container  mx-auto mt-5 border p-3 container">
-      <h4 className="mb-3 text-warning"> Please Login</h4>
+    <div className="form-container  mx-auto mt-3 mb-3 border p-3 container">
+      <div className="login-title">
+      <h4 className="mb-3 ">Let's Get Started</h4>
+      <p>Sign in to continue to Warehouse</p>
+      </div>
       <Form onSubmit={handleToLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control

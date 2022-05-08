@@ -46,8 +46,11 @@ const Register = () => {
   }
   
   return (
-    <div className="form-container  mx-auto mt-5 border p-3 container">
-      <h4 className="mb-3 text-primary"> Well-Come To Our WareHouse !!</h4>
+    <div className="form-container  mx-auto mt-3 mb-3 border p-3 container">
+      <div className="login-title">
+      <h4 className="mb-3 ">Get started with US</h4>
+      <small>Register a New Membership</small>
+      </div>
       <Form onSubmit={handleToRegister}>
         <Form.Group className="mb-3" controlId="formBasicText">
           <Form.Control ref={nameRef} type="text" name='name'  placeholder="Enter Your Name" required />
@@ -73,9 +76,9 @@ const Register = () => {
         error1?errorMessage:''
       }
       <p>
-        Already have Account ?
+        Already have an account ?
         <Link className="text-decoration-none fw-bold" to="/Login">
-          Go Login !
+          Log In !
         </Link>
       </p>
      <ToastContainer/>

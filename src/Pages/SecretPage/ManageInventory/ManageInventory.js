@@ -12,7 +12,7 @@ const ManageInventory = () => {
     },[products])
 
     const handleToDelete=(id)=>{
-        const confirmation =window.confirm()
+        const confirmation =window.confirm('Are You Sure To Delete It ?')
         if(confirmation){
           const url=`https://secret-sands-49470.herokuapp.com/products/${id}`
           fetch(url,{
